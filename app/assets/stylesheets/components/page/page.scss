@@ -1,0 +1,375 @@
+.page {
+  flex-grow: 0;
+  flex-shrink: 1;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  cursor: text;
+  transition: 0.5s;
+  color: rgb(55, 53, 47);
+}
+
+.topbar {
+  width: 100%;
+  height: 45px;
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  cursor: default;
+  background: white;
+  color: rgb(55, 53, 47);
+  // box-shadow: 0 1px 0 0 rgba(212, 212, 216, 0.6);
+}
+
+.topbar-menu-wrapper {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar-menu {
+  width: 24px;
+  height: 24px;
+  color: rgba(55, 53, 47, 0.8);
+  border-radius: 3px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(55, 53, 47, 0.08);
+  }
+}
+
+.topbar-menu-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  user-select: none;
+}
+
+.breadcrumb-wrapper {
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px 0 8px;
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(55, 53, 47, 0.08);
+  }
+}
+
+.breadcrumb-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+}
+
+.breadcrumb {
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1;
+
+  &:hover {
+    // background: rgba(55, 53, 47, 0.08);
+  }
+}
+
+.topbar-actions {
+  padding: 0 10px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.page-scroller {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  overflow: auto;
+  margin: 0;
+  padding-top: 45px;
+  background: white;
+  color: rgb(55, 53, 47);
+}
+
+
+.page-header-wrapper {
+  width: 100%;
+  z-index: 0;
+  user-select: none;
+}
+
+.page-header {
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.page-cover {
+  width: 100%;
+  height: 30vh;
+  background-position: center;
+  object-fit: cover;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  // flex-grow: 1;
+  // flex-shrink: 0;
+  // flex-basis: auto;
+
+  min-width: 160px;
+  width: 100%;
+  margin: 0px 32px 40vh 52px;
+  padding: 0;
+}
+
+// PAGE WRAPPER STYLES
+// does not account for sidebar state
+
+@media (min-width: 320px) {
+  .page-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0px 32px 40vh 52px;
+  }
+}
+
+@media (min-width: 720px) {
+  .page-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0px 52px 40vh 72px;
+  }
+}
+
+@media (min-width: 976px) {
+  .page-wrapper {
+    width: 626px;
+    margin: 0px auto 40vh;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1080px) {
+  .page-wrapper {
+    width: 708px; 
+  }
+}
+
+// END PAGE WRAPPER STYLES
+
+
+.cover-controls {
+  position: absolute;
+  z-index: 3;
+  right: 8px;
+  top: -48px;
+  display: flex;
+  height: 24px;
+  border-radius: 3px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+}
+
+.cover-control {
+  cursor: pointer;
+  padding: 4px 6px;
+  background: white;
+  color: rgba(55, 53, 47, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 4;
+
+  &.change-cover {
+    border-right: 1px solid rgba(55, 53, 47, 0.09);
+  }
+
+  &:hover {
+    background: rgba(252, 189, 0, 0.8);
+  }
+}
+
+
+.page-title-wrapper {
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.page-title[contenteditable]:empty:after {
+  content: attr(placeholder);
+}
+
+.page-body {
+  width: 100%;
+}
+
+.droppable-area {
+  width: 100%;
+}
+
+.page-controls {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 16px auto;
+}
+
+input[type='file'].cover-upload-input {
+  display: none;
+}
+
+.temp {
+  display: block;
+}
+
+.cover-upload-label {
+  width: fit-content;
+  height: 28px;
+  padding: 0px 8px 0px 6px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.1;
+  user-select: none;
+  cursor: pointer;
+  color: rgba(55, 53, 47, 0.3);
+  transition: 0.1s;
+
+  &:hover {
+    background: rgb(240, 239, 236);
+  }
+}
+
+.cover-upload-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  fill: rgba(55, 53, 47, 0.3);
+}
+
+.add-block-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: absolute;
+  left: -40px;
+  top: 12px;
+
+  &:hover {
+    background: rgba(190, 190, 190, 0.3);
+  }
+
+  svg {
+    color: rgb(195, 194, 192);
+    width: 20px;
+    height: 20px;
+    user-select: none;
+  }
+}
+
+#page-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 82px 0 0 3px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.with-cover {
+    margin: -48px 0 0 3px;
+  }
+
+  &:hover {
+    background: rgba(190, 190, 190, 0.12);
+  }
+}
+
+.page-icon {
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+  line-height: 1;
+  user-select: none;
+}
+
+// emoji-mart styles
+
+.emoji-mart {
+  cursor: default;
+  box-shadow: rgba(15, 15, 15, 5%) 0px 0px 0px 1px, rgba(15, 15, 15, 10%) 0px 3px 6px,
+    rgba(15, 15, 15, 20%) 0px 9px 24px;
+}
+
+.emoji-mart-category .emoji-mart-emoji,
+.emoji-mart-category .emoji-mart-emoji span {
+  cursor: pointer !important;
+}
+
+.emoji-mart-preview-skins {
+  cursor: pointer;
+}
+
+.emoji-mart-preview-data {
+  word-break: normal;
+}
+
+.emoji-mart-preview-name {
+  word-break: normal;
+}
+
+.emoji-mart-preview-shortnames {
+  display: none;
+}
+
+.emoji-mart-preview-emoticons {
+  display: none;
+}
