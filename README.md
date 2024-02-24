@@ -1,9 +1,5 @@
 # lilNotion
 
-lilNotion is a fullstack, single-page web app that clones some of [Notion](https://www.notion.so/product)'s features. It's a document editor that allows users to write notes, projects, and wikis in a flexible format.
-
-## 🖥 **Live Demo: [lilnotion.herokuapp.com](https://lilnotion.herokuapp.com)**
-
 ![lilNotion home](https://raw.githubusercontent.com/brandonfang/lilnotion/main/app/assets/images/readme-1.png)
 
 ## 🧑‍💻 Tech Stack
@@ -199,27 +195,3 @@ function Image({ block, updateBlock }) {
 }
 ```
 
-## 👋 How To Use
-
-To clone and run this application, you'll need Git, Node.js, and Ruby on Rails installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/brandonfang/lilnotion
-
-# Go into the repository
-$ cd lilnotion
-
-# Install dependencies
-$ npm install
-$ gem install
-
-# Run the app
-$ npm start
-$ rails server
-```
-
-## 📅 To-do
-
-- Rich text - text formatting, colored text, colored backgrounds
-- Nested pages
